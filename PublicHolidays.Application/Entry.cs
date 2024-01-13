@@ -17,6 +17,10 @@ namespace PublicHolidays.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IPublicHolidaysService, PublicHolidaysService>();
+            services.AddHttpClient("publicholidayapi", client =>
+            {
+                client.BaseAddress = new Uri("https://date.nager.at/api/v3/PublicHolidays/");
+            });
 
             return services;
         }

@@ -9,6 +9,6 @@ namespace PublicHolidays.Domain.Abstractions
 {
     public interface IPublicHolidaysService
     {
-        public Task<List<PublicHoliday>> GetPublicHolidaysAsync(int year, string countryCode);
+        public Task<List<PublicHoliday>?> GetPublicHolidaysAsync(int? year, string? countryCode);
     }
 }

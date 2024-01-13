@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicHolidays.Client", "Pu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicHolidays.Host", "PublicHolidays.Host\PublicHolidays.Host.csproj", "{E1AB2EFE-4B1F-4324-88DB-940DC9E04302}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F7207D13-75EE-484B-89BA-18F0BFF010BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{017A8163-9FFA-43DF-9C4D-8D692758E012} = {F7207D13-75EE-484B-89BA-18F0BFF010BA}
+		{1787BAD0-B82D-4CA0-8A2B-9A907A30B9A2} = {F7207D13-75EE-484B-89BA-18F0BFF010BA}
+		{F46D1E48-D769-4321-A71C-59A0EA041573} = {F7207D13-75EE-484B-89BA-18F0BFF010BA}
+		{E1AB2EFE-4B1F-4324-88DB-940DC9E04302} = {F7207D13-75EE-484B-89BA-18F0BFF010BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F3A0F9A-525A-4C7C-82EA-83D723FE0597}
