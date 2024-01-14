@@ -1,4 +1,5 @@
 using PublicHolidays.Host.Components;
+using PublicHolidays.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.Services.AddBlazorBootstrap();
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

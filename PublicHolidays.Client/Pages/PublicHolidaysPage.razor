@@ -1,0 +1,6 @@
+﻿@page "/public-holidays"
+@* Make it SSR, because in this case loading and listing holidays data is much faster than loading the entire Wasm first. *@
+@rendermode @(new InteractiveServerRenderMode(prerender: false)) 
+
+<PublicHolidaysFilter CurrentYear="CurrentYear" CurrentCountry=@CurrentCountry OnYearSelected="SelectYear" OnCountrySelected="SelectCountry" />
+<PublicHolidaysTable Year="CurrentYear" Country=@CurrentCountry />

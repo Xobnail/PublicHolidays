@@ -16,7 +16,7 @@ namespace PublicHolidays.Domain.Entities
         public bool Fixed { get; set; }
         public bool Global { get; set; }
         public List<string>? Countries { get; set; }
-        public int LaunchYear { get; set; }
-        public List<HolidayType>? Types { get; set; }
+        public int? LaunchYear { get; set; }
+        public List<string>? Types { get; set; }
     }
 }

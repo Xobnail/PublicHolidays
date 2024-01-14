@@ -1,0 +1,34 @@
+﻿<div class="filters-wrapper">
+    <div class="filter filter-year">
+        <div class="filter-name">
+            <h6>Year:</h6>
+        </div>
+        <Dropdown AutoClose="true" Size="Size.Small">
+            <DropdownToggleButton>@CurrentYear</DropdownToggleButton>
+            <DropdownMenu>
+                <DropdownItem @onclick="@(() => OnYearSelected?.Invoke(2023))">2023</DropdownItem>
+                <DropdownItem @onclick="@(() => OnYearSelected?.Invoke(2022))">2022</DropdownItem>
+                <DropdownItem @onclick="@(() => OnYearSelected?.Invoke(2021))">2021</DropdownItem>
+                <DropdownItem @onclick="@(() => OnYearSelected?.Invoke(2020))">2020</DropdownItem>
+                <DropdownItem @onclick="@(() => OnYearSelected?.Invoke(2019))">2019</DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </div>
+    <div class="filter">
+        <div class="filter-name">
+            <h6>Country:</h6>
+        </div>
+            <Dropdown AutoClose="true" Size="Size.Small">
+                <DropdownToggleButton>@CurrentCountry</DropdownToggleButton>
+            <DropdownMenu>
+                <DropdownItem @onclick="@(() => OnCountrySelected?.Invoke("RU"))">RU</DropdownItem>
+                <DropdownItem @onclick="@(() => OnCountrySelected?.Invoke("GB"))">GB</DropdownItem>
+                <DropdownItem @onclick="@(() => OnCountrySelected?.Invoke("US"))">US</DropdownItem>
+                <DropdownItem @onclick="@(() => OnCountrySelected?.Invoke("BY"))">BY</DropdownItem>
+                <DropdownItem @onclick="@(() => OnCountrySelected?.Invoke("FR"))">FR</DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </div>
+</div>
+
+

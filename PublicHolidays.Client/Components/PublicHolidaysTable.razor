@@ -1,0 +1,32 @@
+﻿<div>
+    @if (PublicHolidays == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table table-striped table-hover rounded-3 overflow-hidden">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Local name</th>
+                    <th scope="col">English name</th>
+                    <th scope="col">Country code</th>
+                    <th scope="col">Launch year</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var holiday in PublicHolidays)
+                {
+                    <tr>
+                        <td>@holiday.Date.ToString("d")</td>
+                        <td>@holiday.LocalName</td>
+                        <td>@holiday.Name</td>
+                        <td>@holiday.CountryCode</td>
+                        <td>@holiday.LaunchYear</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
