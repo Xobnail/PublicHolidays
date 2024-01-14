@@ -1,14 +1,18 @@
 ﻿using PublicHolidays.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PublicHolidays.Domain.Abstractions
 {
+    /// <summary>
+    /// Interface for working with Public Holiday Api.
+    /// </summary>
     public interface IPublicHolidaysService
     {
-        public Task<List<PublicHoliday>?> GetPublicHolidaysAsync(int? year, string? countryCode);
+        /// <summary>
+        /// Gets public holidays by year and country code.
+        /// </summary>
+        /// <param name="year">Year.</param>
+        /// <param name="countryCode">Country code.</param>
+        /// <returns>Public holidays as IAsyncEnumerable<PublicHoliday?>.</returns>
+        public IAsyncEnumerable<PublicHoliday?> GetPublicHolidays(int? year, string? countryCode);
     }
 }

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Json;
 using PublicHolidays.Domain.Abstractions;
 using PublicHolidays.Domain.Entities;
 
 namespace PublicHolidays.Application.Services
 {
-    internal class PublicHolidaysService : IPublicHolidaysService
+    /// <summary>
+    /// Service for working with Public Holiday Api.
+    /// </summary>
+    public class PublicHolidaysService : IPublicHolidaysService
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
@@ -18,14 +16,20 @@ namespace PublicHolidays.Application.Services
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<List<PublicHoliday>?> GetPublicHolidaysAsync(int? year, string? countryCode)
+        /// <summary>
+        /// Gets public holidays by year and country code.
+        /// </summary>
+        /// <param name="year">Year.</param>
+        /// <param name="countryCode">Country code.</param>
+        /// <returns>Public holidays as IAsyncEnumerable<PublicHoliday?>.</returns>
+        public IAsyncEnumerable<PublicHoliday?> GetPublicHolidays(int? year, string? countryCode)
         {
             ArgumentNullException.ThrowIfNull(year, nameof(year));
             ArgumentNullException.ThrowIfNullOrEmpty(countryCode, nameof(countryCode));
 
             var client = _httpClientFactory.CreateClient("publicholidayapi");
 
-            return await client.GetFromJsonAsync<List<PublicHoliday>>($"{year}/{countryCode}");
+            return client.GetFromJsonAsAsyncEnumerable<PublicHoliday>($"{year}/{countryCode}");
         }
     }
 }
